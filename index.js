@@ -30,3 +30,45 @@ let vehiculos = [
   new Auto('Peugeot', '208', 5, 250000),
   new Moto('Yamaha', 'YBR ', 160, 80500.5),
 ];
+
+function listarVehiculos() {
+  vehiculos.forEach((vehiculo) => {
+    let { marca, modelo, puertas, cilindrada, precio } = vehiculo;
+    console.log(
+      `Marca: ${marca} // Modelo: ${modelo} // ${
+        puertas ? 'Puertas: ' + puertas : 'Cilindrada: ' + cilindrada + 'cc'
+      } // Precio: $${precio.toLocaleString()}`
+    );
+  });
+}
+
+function mostrarVehiculoMasCaro() {
+  let vehiculosOrdenados = vehiculos.sort((a, b) => b.precio - a.precio);
+
+  let resultado = vehiculosOrdenados[0];
+
+  console.log(`Vehiculo mas caro: ${resultado.marcaYModelo}`);
+}
+
+function mostrarVehiculoMasBarato() {
+  let vehiculosOrdenados = vehiculos.sort((a, b) => a.precio - b.precio);
+
+  let resultado = vehiculosOrdenados[0];
+
+  console.log(`Vehiculo mas barato: ${resultado.marcaYModelo}`);
+}
+
+function mostrarVehiculoConYEnLaMarca() {
+  let resultado = vehiculos.filter((vehiculo) =>
+    vehiculo.marca.includes('Y')
+  )[0];
+
+  console.log(
+    `Vehículo que contiene en el modelo la letra ‘Y’: ${resultado.marcaYModelo}`
+  );
+}
+
+function mostrarVehiculosOrdenados() {
+  let vehiculosOrdenados = vehiculos.sort((a, b) => b.precio - a.precio);
+  vehiculosOrdenados.forEach((vehiculo) => console.log(vehiculo.marcaYModelo));
+}
