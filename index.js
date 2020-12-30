@@ -72,3 +72,17 @@ function mostrarVehiculosOrdenados() {
   let vehiculosOrdenados = vehiculos.sort((a, b) => b.precio - a.precio);
   vehiculosOrdenados.forEach((vehiculo) => console.log(vehiculo.marcaYModelo));
 }
+
+listarVehiculos();
+
+console.log('=============================');
+
+mostrarVehiculoMasCaro();
+
+mostrarVehiculoMasBarato();
+
+mostrarVehiculoConYEnLaMarca();
+
+console.log('=============================');
+
+mostrarVehiculosOrdenados();
